@@ -50,7 +50,6 @@ const Home = () => {
                 { id: "db", label: "Dubai" },
                 { id: "la", label: "Los Angeles" },
               ]}
-              // traditionalHTML5
             />
           </div>
           <div className="vl" />
