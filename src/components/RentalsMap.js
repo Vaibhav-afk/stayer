@@ -4,17 +4,23 @@ import { Marker, GoogleApiWrapper, Map } from "google-maps-react";
 //note that google inside the below prop is coming from GoogleApiWrapper.
 function RentalsMap({ locations, google, setHighLight }) {
   const [center, setCenter] = useState();
-
   useEffect(() => {
-    //Object.Keys takes object as parameter and return array.
-    let arr = Object.keys(locations);
-    let getLat = (key) => locations[key]["lat"];
-    let avgLat = arr.reduce((a, c) => a + Number(getLat(c), 0)) / arr.length;
+    if (locations) {
+      //Object.Keys takes object as parameter and return array.
+      let arr = Object.keys(locations);
 
-    let getLng = (key) => locations[key]["lng"];
-    let avgLng = arr.reduce((a, c) => a + Number(getLng(c)), 0) / arr.length;
+      if (arr.length > 0) {
+        let getLat = (key) => locations[key]["lat"];
+        let avgLat =
+          arr.reduce((a, c) => a + Number(getLat(c), 0)) / arr.length;
 
-    setCenter({ lat: avgLat, lng: avgLng });
+        let getLng = (key) => locations[key]["lng"];
+        let avgLng =
+          arr.reduce((a, c) => a + Number(getLng(c)), 0) / arr.length;
+
+        setCenter({ lat: avgLat, lng: avgLng });
+      }
+    }
   }, [locations]);
 
   return (
@@ -41,5 +47,5 @@ function RentalsMap({ locations, google, setHighLight }) {
 }
 
 export default GoogleApiWrapper({
-  apiKey: "",
+  apiKey: process.env.REACT_APP_gmapApi,
 })(RentalsMap);

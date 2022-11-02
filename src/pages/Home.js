@@ -3,16 +3,16 @@ import "./Home.css";
 import { Link } from "react-router-dom";
 
 import bg from "../images/frontpagebg.png";
-import logo from "../images/airbnb.png";
+import logo from "../images/stayer.png";
 import { ConnectButton } from "@web3uikit/web3";
-import { Select, DatePicker, Input } from "@web3uikit/core";
+import { Select, DatePicker, Input, Button } from "@web3uikit/core";
 import { Search } from "@web3uikit/icons";
 
 const Home = () => {
   const [checkIn, setCheckIn] = useState(new Date());
   const [checkOut, setCheckOut] = useState(new Date());
-  const [destination, setDestination] = useState("New York");
-  const [guests, setGuests] = useState(2);
+  const [destination, setDestination] = useState("");
+  const [guests, setGuests] = useState(1);
 
   return (
     <>
@@ -39,21 +39,23 @@ const Home = () => {
       <div className="tabContent">
         <div className="searchFields">
           <div className="inputs">
-            Location
+            <p className="inputName">Location</p>
             <Select
               defaultOptionIndex={0}
-              onChange={(data) => setDestination(data.label)}
+              id="Select"
+              onChange={(data) =>  setDestination(data.label)}
               options={[
                 { id: "ny", label: "New York" },
                 { id: "lon", label: "London" },
                 { id: "db", label: "Dubai" },
                 { id: "la", label: "Los Angeles" },
               ]}
+              // traditionalHTML5
             />
           </div>
           <div className="vl" />
           <div className="inputs">
-            Check In
+            <p className="inputName">Check In</p>
             <DatePicker
               id="CheckIn"
               onChange={(event) => setCheckIn(event.date)}
@@ -61,7 +63,7 @@ const Home = () => {
           </div>
           <div className="vl" />
           <div className="inputs">
-            Check Out
+            <p className="inputName">Check Out</p>
             <DatePicker
               id="CheckOut"
               onChange={(event) => setCheckOut(event.date)}
@@ -69,7 +71,7 @@ const Home = () => {
           </div>
           <div className="vl" />
           <div className="inputs">
-            Guests
+            <p className="inputName">Guests</p>
             <Input
               value={2}
               name="AddGuests"
@@ -83,10 +85,24 @@ const Home = () => {
             state={{ destination, checkIn, checkOut, guests }}
           >
             <div className="searchButton">
-              <Search fill="#fff" size={24}  />
+              <Search fill="#fff" style={{ borderRadius: "50%" }} size={24} />
             </div>
           </Link>
         </div>
+      </div>
+
+      <div className="randomLocation">
+        <div className="title">Feel Adventurous</div>
+        <div className="text">
+          Let us decide and discover new places to stay, live, work or just
+          relax.
+        </div>
+        <Button
+          text="Explore A Location"
+          theme="secondary"
+          size="large"
+          onClick={() => alert("Explore a location")}
+        />
       </div>
     </>
   );

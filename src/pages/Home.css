@@ -1,16 +1,16 @@
 .container {
   position: absolute;
   top: 0;
-  height: 100vh;
   width: 100vw;
+  height: 100vh;
   background-size: cover;
   z-index: -999;
 }
 
 .containerGradinet {
-  background-image: linear-gradient(rgb(0,0,0,0.75), rgb(0,0,0,0));
-  height:50%;
-  width:100%
+  background-image: linear-gradient(rgb(0, 0, 0, 0.75), rgb(0, 0, 0, 0));
+  height: 50%;
+  width: 100%
 }
 
 
@@ -21,29 +21,29 @@
   align-items: center;
 }
 
-.topBanner{
+.topBanner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width:93%;
+  width: 93%;
   padding: 30px 60px;
 }
 
-.logo{
-  width:10vw;
-  height:calc(10vw*0.3)
+.logo {
+  width: 13vw;
+  height: calc(8vw*0.3)
 }
 
 .tabContent {
-  width:100%;
+  width: 100%;
   display: flex;
   justify-content: center;
 }
 
 .searchFields {
-  width:800px;
+  width: 900px;
   background-color: white;
-  height:65px;
+  height: 67px;
   border-radius: 100px;
   display: flex;
   justify-content: space-evenly;
@@ -51,12 +51,12 @@
   padding-left: 30px;
 }
 
-.tabs{
-  color:white;
+.tabs {
+  color: white;
   font-weight: 500;
   display: flex;
   justify-content: center;
-  gap:35px;
+  gap: 35px;
   font-size: 16px;
 }
 
@@ -67,14 +67,28 @@
 
 .inputs {
   font-size: 12px;
-  font-weight:bold;
+  font-weight: bold;
   margin-top: 10px;
-  width:160px;
+  margin-bottom: 15px;
+  width: 160px;
 }
+
+/*Modified*/
+.inputName{
+  margin:4px 0px 3.5px 3px;
+}
+
+/*Modified*/
+.ctZbpZ{
+  width:180px;
+  height: 42px !important;
+  padding: 7px 16px 14px 16px !important;
+}
+
 
 .vl {
   position: relative;
-  top:15;
+  top: 15;
   height: 20%;
   background-color: rgb(228, 228, 228);
   width: 1.5px;
@@ -84,7 +98,7 @@
 
 .searchButton {
   background-color: #EB4E5F;
-  padding:10px;
+  padding: 10px;
   border-radius: 50%;
   transition: transform .4s;
 }
@@ -98,7 +112,7 @@
   margin-top: 25vh;
   color: white;
   width: 300px;
-  padding-left:100px;
+  padding-left: 100px;
 }
 
 .title {
